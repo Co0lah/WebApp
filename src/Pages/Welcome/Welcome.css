@@ -1,0 +1,35 @@
+.viewWelcomeBoard {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #cccccc;
+    height: 100%;
+    padding-top: 40px;
+    height: 100%;
+    background-image: url("../../images/kmtpic2.jpg");
+}
+
+.textTitleWelcome {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ebedf1;
+}
+
+.textDescriptionWelcome {
+    font-size: 20px;
+    color: #edeff3;
+    margin-bottom: 200px;
+}
+
+.avatarWelcome {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    background-image: url(../../images/nopic.jpg);
+  
+}
