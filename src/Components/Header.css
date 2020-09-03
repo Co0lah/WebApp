@@ -121,7 +121,7 @@
 	}
 
 	.header-login-signup .header-limiter ul {
-		display: none;
+		float: right;
 	}
 
 }

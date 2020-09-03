@@ -87,7 +87,7 @@ export default class Chat extends React.Component{
         let check = false;
         if(this.state.currentPeerUser &&
             this.state.currentPeerUser.id === itemId){
-                className = 'viewWrapItemFocused'
+                className = "viewWrapItemFocused"
             }else{
                 this.state.displayedContactSwitchedNotification.forEach((item)=>{
                     if(item.notificationId.length > 0){
@@ -156,7 +156,7 @@ export default class Chat extends React.Component{
                                     {`Name : ${item.name}`}
                                 </span>
                             </div>
-                            {classname === 'viewWrapItemNotification' ?
+                            {classname === "viewWrapItemNotification" ?
                             <div className= "notificationparagraph">
                             <p id={item.key} className= "newmessages">Nouveaux messages</p>
                             </div>: null}
@@ -209,7 +209,7 @@ export default class Chat extends React.Component{
                                     </span>
                                 </div>
                                 {classname === 'viewWrapItemNotification' ?
-                                <div className= 'notificationparagraph'>
+                                <div className= "notificationparagraph">
                                 <p id={item.key} className= "newmessages">Nouveaux messages</p>
                                 </div>: null}
                             </button>

@@ -7,7 +7,7 @@
     width: 100%;
     position: relative;
     
-    background-image: url("https://i.pinimg.com/474x/2e/2e/25/2e2e25c53d858f4af66151304fdb68b7.jpg");
+    background-image: url("../../images/kmtpic1.jpg");
  
     backface-visibility: hidden;
     border-left: 1px solid #ededed;
@@ -298,6 +298,15 @@ input::placeholder {
 
 .imgItemRight {
     object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0px;
+}
+.imgItemRight2 {
+    object-fit: cover;
     width: 300px;
     height: 300px;
     border-top-left-radius: 8px;
@@ -308,12 +317,22 @@ input::placeholder {
 
 .imgItemLeft {
     object-fit: cover;
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 8px;
+}
+
+.imgItemLeft2 {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0px;
 }
 
 .textTimeLeft {
@@ -364,8 +383,8 @@ input::placeholder {
 }
 
 .textSayHi {
-    color: #808888;
-    font-size: 14px;
+    color: #7be2b2;
+    font-size: 18px;
 }
 
 .imgWaveHand {

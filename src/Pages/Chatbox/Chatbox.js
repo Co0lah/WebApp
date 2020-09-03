@@ -94,7 +94,7 @@ export default class Chatbox extends React.Component{
         if (content.trim() === ''){
             return
         }
-        const timestamp =  moment()
+        const timestamp = moment()
         .valueOf()
         .toString()
 
@@ -153,6 +153,8 @@ export default class Chatbox extends React.Component{
 
 
     render(){
+        console.log(this.state);
+        
         return(
             <Card className= "viewChatBoard">
                 <div className= "headerChatBoard">
@@ -180,18 +182,19 @@ export default class Chatbox extends React.Component{
                     />
                 </div>
                 {this.state.isShowSticker ? this.renderStickers():null}
-                
                 <div className= "viewBottom">
                     <img
                         className= "icOpenGallery"
                         src= {images.input_file}
-                        alt= "input_file"
+                        alt= "icon open gallery"
                         onClick= { ()=>{ this.refInput.click()}}
                     />
-                    <img
+                    <input
+                        ref= {el => {
+                            this.refInput = el
+                        }}
                         className= "viewInputGallery"
-                        accept= "images/*"
-                        alt= ""
+                        accept= "image/*"
                         type= "file"
                         onChange= {this.onChoosePhoto}
                     />
@@ -233,8 +236,57 @@ export default class Chatbox extends React.Component{
         )
     }
 
+    onChoosePhoto = event => {
+        if(event.target.files && event.target.files[0]) {
+            this.setState({isLoading: true})
+            this.currentPhotoFile = event.target.files[0]
+            //check if file is an image
+            //console.log(localstorage.PREFIX_IMAGE)
+            const prefixFiletype = event.target.files[0].type.toString()
+            if (prefixFiletype.indexOf('image/') === 0) {
+                this.uploadPhoto()
+            } else {
+                this.setState({isLoading: false})
+                this.props.showToast(0, "Ceci n'est pas une image")
+            }
+        } else{
+            this.setState({isLoading: false})
+        }
+    }
+
+    uploadPhoto = () => {
+        if (this.currentPhotoFile) {
+            const timestamp = moment()
+            .valueOf()
+            .toString()
+
+            const uploadTask = firebase.storage()
+            .ref()
+            .child(timestamp)
+            .put(this.currentPhotoFile)
+
+            uploadTask.on(
+                LoginString.UPLOAD_CHANGED,
+                null,
+                err => {
+                    this.setState({isLoading: false})
+                    this.props.showToast(0, err.message)
+                },
+                () => {
+                    uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+                        this.setState({isLoading: false})
+                        this.onSendMessage(downloadURL, 1)
+                    })
+                }
+            )
+        } else {
+            this.setState({isLoading: false})
+            this.props.showToast(0, 'Fichier incorrect')
+        }
+    }
+
     renderListMessage = () =>{
-        if(this.listMessage.lenght > 0){
+        if(this.listMessage.length > 0){
             let viewListMessage = []
             this.listMessage.forEach((item, index) =>{
                 if(item.idFrom === this.currentUserId){
@@ -249,7 +301,7 @@ export default class Chatbox extends React.Component{
                         viewListMessage.push(
                             <div className="viewItemRight2" key= {item.timestamp}>
                                 <img 
-                                    className= "imgItemRight"
+                                    className= "imgItemRight2"
                                     src= {item.content}
                                     alt= ""
                                 />
@@ -280,14 +332,14 @@ export default class Chatbox extends React.Component{
                                     ): (
                                         <div className= "viewPaddingLeft"/> 
                                     )}
-                                    <div>
-                                    <span className= "textContentItem"> {item.content} </span>
+                                    <div className= "viewItemRight" key={item.timestamp}>
+                                        <span className= "textContentItem"> {item.content} </span>
                                     </div>
                                 </div>
                                 {this.isLastMessageLeft(index)?(
                                     <span className= "textTimeLeft">
                                         <div className= "time">
-                                             {moment(Number(item.timestamp)).format('11')}
+                                             {moment(Number(item.timestamp)).format('DD MMM HH:mm')}
                                         </div>
                                     </span>
                                 ): null}
@@ -301,7 +353,7 @@ export default class Chatbox extends React.Component{
                                          <img
                                          src= {this.currentPeerUser.URL}
                                          alt= "avatar"
-                                         className= "viewAvatarLeft"
+                                         className= "peerAvatarLeft"
                                          />
                                      ): (
                                          <div className= "viewPaddingLeft"/>
@@ -310,14 +362,14 @@ export default class Chatbox extends React.Component{
                                         <img
                                         src= {item.content}
                                         alt= "content message"
-                                        className= "imgItemLeft"
+                                        className= "imgItemLeft2"
                                         />
                                      </div>
                                 </div>
                                 {this.isLastMessageLeft(index)?(
                                     <span className= "textTimeLeft">
                                         <div className= "time">
-                                             {moment(Number(item.timestamp)).format('11')}
+                                             {moment(Number(item.timestamp)).format('DD MMM HH:mm')}
                                         </div>
                                     </span>
                                 ): null}
@@ -331,14 +383,14 @@ export default class Chatbox extends React.Component{
                                              <img
                                              src= {this.currentPeerUser.URL}
                                              alt= "avatar"
-                                             className= "viewAvatarLeft"
+                                             className= "peerAvatarLeft"
                                              />
                                          ): (
                                              <div className= "viewPaddingLeft"/>
                                          )}
                                          <div className= "viewItemLeft3" key= {item.timestamp}>
                                             <img
-                                            className= "imgItemRight"
+                                            className= "imgItemRight2"
                                             src= {this.getGifImage(item.content)}
                                             alt= "content message"
                                             />
@@ -347,7 +399,7 @@ export default class Chatbox extends React.Component{
                                     {this.isLastMessageLeft(index)?(
                                     <span className= "textTimeLeft">
                                         <div className= "time">
-                                             {moment(Number(item.timestamp)).format('11')}
+                                             {moment.locale(Number(item.timestamp)).format('DD MMM HH:mm')}
                                         </div>
                                     </span>
                                     ): null}
@@ -390,6 +442,20 @@ export default class Chatbox extends React.Component{
             </div>
         )
     }
+
+    getGifImage =value =>{
+        switch(value) {
+            case 'spic1':
+                return images.spic1
+            case 'spic2':
+                return images.spic2
+            case 'lol':
+                return images.lol
+            default:
+                return null
+        }
+    }
+
     hashString = str => {
         let hash = 0
         for (let i = 0; i < str.length; i++) {

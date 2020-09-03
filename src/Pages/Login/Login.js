@@ -57,10 +57,10 @@ export default class Login extends React.Component{
                 .then(function(querySnapshot){
                     querySnapshot.forEach(function(doc){
                         const currentdata = doc.data()
-                        localStorage.setItem(LoginString.FirebaseDocumentId, doc.id)
-                        localStorage.setItem(LoginString.ID, currentdata.id)
-                        localStorage.setItem(LoginString.Name, currentdata.name)
-                        localStorage.setItem(LoginString.Email, currentdata.email)
+                        localStorage.setItem(LoginString.FirebaseDocumentId, doc.id);
+                        localStorage.setItem(LoginString.ID, currentdata.id);
+                        localStorage.setItem(LoginString.Name, currentdata.name);
+                        localStorage.setItem(LoginString.Email, currentdata.email);
                         localStorage.setItem(LoginString.Password, currentdata.password);
                         localStorage.setItem(LoginString.PhotoURL, currentdata.URL);
                         localStorage.setItem(LoginString.Description, currentdata.description);
@@ -159,6 +159,7 @@ export default class Login extends React.Component{
                             required
                             fullWidth
                             id="password"
+                            type="password"
                             label="Mot de passe"
                             name="password"
                             autoComplete="current_password"

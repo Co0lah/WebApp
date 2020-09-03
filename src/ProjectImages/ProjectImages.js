@@ -9,6 +9,5 @@ const Images ={
     input_file: require('../images/icdoc.png'),
     send: require('../images/icsend.png'),
     sticker: require('../images/icsticker.png')
-
 }
 export default Images;

@@ -14,7 +14,7 @@ export default class HomePage extends Component{
                     <div class="splash">
                         <h1 class="splash-head">KAnaL Medu Neter</h1>
                         <p class="splash-subhead">
-                            Parlons peu parlons bien !
+                            Parlons Alkebu Lan !
                         </p>
 
                         <div id="custom-button-wrapper" >

@@ -10,6 +10,7 @@ const LoginString = {
     UPLOAD_CHANGED: 'state_changed',
     PREFIX_IMAGE: 'image/',
     CurrentUserdocKey: '',
+    
 
 }
 export default LoginString
