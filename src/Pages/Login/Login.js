@@ -184,9 +184,9 @@ export default class Login extends React.Component{
                             </div>   
 
                             <div className="CenterAligningItems">
-                                <p>Vous n'avez pas de compte? </p>
+                                <p>Vous n'avez pas de compte?</p>
                                 <Link to="/signup">
-                                     Enregistrez vous ici
+                                      Enregistrez vous ici
                                 </Link>
                             </div> 
                             <div className= "error">

@@ -52,12 +52,12 @@
     height: 45px;
     background-image: url(../../images/nopic.jpg);
     left:10px;
-   position: absolute;
+    position: absolute;
     cursor: pointer;
     border-radius: 50px;
 }
 
-/* Dialog confirm */
+/* Dialog confirm A CHECKER !!! */
 
 .viewCoverScreen {
     position: absolute;
@@ -141,9 +141,7 @@
     max-height: 100vh;
     min-height: 90vh;
     height: auto;
-    width: 50vh;
-  
-   
+    width: 50vh;   
 }
 
 .viewListUser::-webkit-scrollbar-track {

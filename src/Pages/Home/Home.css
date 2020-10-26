@@ -8,11 +8,11 @@
   
   /*
   * -- BASE STYLES --
-  * Most of these are inherited from Base, but I want to change a few.
+  * Style de base que j'ai modifié à ma guise.
   */
   body {
     line-height: 1.7em;
-    color: #769294;
+    background-image: url(../../images/kamoon-3363023_1920.jpg);    
     font-size: 13px;
   }
   
@@ -37,7 +37,7 @@
   
   /*
   * -- LAYOUT STYLES --
-  * These are some useful classes which I will need
+  * A check !!!
   */
   .l-box {
     padding: 1em;
@@ -135,15 +135,13 @@
   
   /*
   * -- SPLASH STYLES --
-  * This is the blue top section that appears on the page.
+  * Main section bleu.
   */
   
   .splash-container {
-    background: #1f8dd6;
-    opacity:0.5;
     z-index: 1;
     overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
+    /* Style insispensable pour le "scroll-over" effect */
     width: 100%;
     height: 88%;
     top: 80px;
@@ -162,7 +160,7 @@
     text-transform: uppercase;
   }
   
-  /* This is the main heading that appears on the blue section */
+  /* Main section couleur bleu  */
   .splash-head {
     font-size: 20px;
     font-weight: bold;
@@ -173,12 +171,11 @@
     border-radius: 5px;
     line-height: 1em;
   }
-  
-  /* This is the subheading that appears on the blue section */
+  /* contenu sub title */
   .splash-subhead {
     color: white;
     letter-spacing: 0.05em;
-    opacity: 0.8;
+    font-size: 1.4rem;  
   }
   
   /*
@@ -552,4 +549,19 @@
     align-items: center;
     display: flex;
     opacity: 0.5;
+  }
+
+  @media screen and (max-width:480px) {
+
+    /* Display none temporaire */
+    .splash {
+      display: none;      
+    }
+
+    .Appfeatures{
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
   }
