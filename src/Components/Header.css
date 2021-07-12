@@ -4,7 +4,7 @@
 	background-image: url(../images/gaming.jpg);
 	box-shadow:0 1px 1px #ccc;
 	padding: 20px 40px;
-	height: 80px;
+	height: 90px;
 	color: #ffffff;
 	box-sizing: border-box;
 }
@@ -44,14 +44,13 @@
 	font:16px Arial, Helvetica, sans-serif;
 	line-height: 40px;
 	float: left;
-	margin: 0 0 0 60px;
 	padding: 5px;
 }
 
 .header-login-signup .header-limiter nav a{
 	font-size: 14px;
 	display: inline-block;
-	padding: 0 5px;
+	padding: 0 20px;
 	opacity: 0.9;
 	text-decoration:none;
 	line-height: 1;
@@ -71,13 +70,12 @@
 	font: 14px Arial, Helvetica, sans-serif;
 	list-style: none;
 	line-height: 1;
-	float: right;
-	margin-top: 15px;
 }
 
 .header-login-signup .header-limiter ul li {
 	display: inline-block;
-	margin-left: 15px;
+	margin-left: 10px;
+	margin-top: 15px;
 	opacity:0.9;
 }
 
@@ -135,7 +133,7 @@
 		width: 100%;
 		right: 25px;
 		float: right;
-		margin-top: 100px;
+		margin-top: 10px;
 	}
 
 	.header-login-signup{

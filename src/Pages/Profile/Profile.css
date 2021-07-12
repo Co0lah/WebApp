@@ -144,3 +144,14 @@ input::placeholder {
 .totalprofile{
     border-radius: 1px solid black;
 }
+
+/* ---------------------------------------------------------- MEDIA QUERIES ------------------------------------------------ */
+
+@media screen and (max-width:425px) {
+    .profileroot {
+        width: 100%;
+    }
+    .textInput {
+        width: 100%;
+    }
+}
