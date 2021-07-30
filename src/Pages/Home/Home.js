@@ -35,14 +35,14 @@ export default class HomePage extends Component {
 
                 <div class="content-wrapper">
                     <div class="content">
-                        <h2 class="content-head is-center"> Accessoires de Keur Kamite </h2>
+                        <h2 class="content-head is-center"> Accessoires de Keur Wax </h2>
 
                         <div className="Appfeatures">
 
                             <div class="1-box pure-u-1 pure-u-md-1-2 pure-u-1g-1-4">
                                 <h3 class="content-subhead">
                                     <i class="fa fa-sign-in"></i>
-                                    Keur Kamite
+                                    Keur Wax
                                 </h3>
                                 <p>  Pour découvir l'application </p>
                             </div>
@@ -60,7 +60,7 @@ export default class HomePage extends Component {
                                     <i class="fa fa-th-large"></i>
                                     Nos événements
                                 </h3>
-                                <p> Keur kamite events </p>
+                                <p> Keur Wax events </p>
                             </div>
 
                             <div class="1-box pure-u-1 pure-u-md-1-2 pure-u-1g-1-4">
@@ -80,7 +80,7 @@ export default class HomePage extends Component {
                         </div>
                         <div class="pure-u-1 pure-u-md-1-2 pure-u-1g-3-5">
                             <h2 class="content-head content-head-ribbon">COOLAH GASSA
-                                <p style={{ color: 'black' }}> FONDATEUR DE KEUR KAMITE</p>
+                                <p style={{ color: 'black' }}> FONDATEUR DE KEUR Wax</p>
                             </h2>
                         </div>
                     </div>
@@ -114,7 +114,8 @@ export default class HomePage extends Component {
                                 <h4>Contactez nous</h4>
                                 <p>
                                     Pour toutes questions ou suggestions, contactez nous sur:
-                                    <a href="https://www.facebook.com/dramane.guesso.5">https://www.facebook.com/dramane.guesso.5</a>
+                                    <a href="www.linkedin.com/in/couliga-yameogo">www.linkedin.com/in/couliga-yameogo
+                                    </a>
                                 </p>
                                 <p>
                                     Gmail: <a href="mailto:celes.thym@gmail.com">celes.thym@gmail.com</a>
